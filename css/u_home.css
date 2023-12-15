@@ -1,0 +1,19 @@
+
+
+.header{
+    font-size:large;
+}
+
+.h3{
+    margin : 10%;
+    text-align:center ;
+    color: white;
+}
+
+.h3 { 
+    animation: fadeInAnimation ease 7s; 
+    animation-iteration-count: on-slide; 
+    animation-fill-mode: forwards; 
+} 
+
+
