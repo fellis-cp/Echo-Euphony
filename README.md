@@ -46,5 +46,10 @@ localhost/Euphony-Euphony
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Screenshot (885)](https://github.com/fellis-cp/Echo-Euphony/assets/60042724/de6b3741-8d7d-41e3-b65c-9c10d63aaf8c)
+![Screenshot (886)](https://github.com/fellis-cp/Echo-Euphony/assets/60042724/f0dcb911-f8ed-44fe-a1d0-6689c05cd16b)
+![Screenshot (888)](https://github.com/fellis-cp/Echo-Euphony/assets/60042724/c5b9304c-8a9c-44b1-a19d-e9a11e7b7049)
+
+
+
 
