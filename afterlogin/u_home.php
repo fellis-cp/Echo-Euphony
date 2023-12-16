@@ -20,17 +20,16 @@ if (!isset($_SESSION['u_fname'])) {
 <body>
 
   <form>
-
-  <div class="header">
-  <h1>Selamat Datang <?php echo $_SESSION['u_fname']; ?></h1>
-  <p>Untuk melihat produk kami silahkan menuju ke bagian Products</p>
-</div>
+        <div class="header">
+          <h1>Selamat Datang <?php echo $_SESSION['u_fname']; ?></h1>
+             <p>Untuk melihat produk kami silahkan menuju ke bagian Products</p>
+        </div>
 
   
-</form>
+        </form>
 
 
 
-</body>
+    </body>
 </html>
 
