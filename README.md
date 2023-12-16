@@ -16,7 +16,7 @@ Webisite ini dibuat untuk memenuhi tugas akhir Pemrograman Web.
 ## Fitur
 
 - Admin Panel
-- User Login & Admin Login
+- User Login , register & Admin Login
 - Simple Crud System
 
 
