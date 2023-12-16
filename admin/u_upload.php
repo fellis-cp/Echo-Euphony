@@ -21,51 +21,51 @@ function generateUniqueFileName($dir, $name, $ext) {
     return $name . '_' . $counter . '.' . $ext;
 }
 
-// Check if a file is selected for upload
+// check awal
 if ($_FILES["fileToUpload"]["size"] > 0) {
-    // Check if file is an image
+    // apakah file img?
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if ($check === false) {
         echo "File is not an image.";
-        exit(); // Add proper error handling or redirect here
+        exit(); 
     }
 
-    // Check file size and allowed formats
-    $maxFileSize = 3000000; // Adjust size limit as needed
+    //check file size buffer
+    $maxFileSize = 30000000; // 
     $allowedFormats = ["jpg", "png", "jpeg", "gif"];
     if ($_FILES["fileToUpload"]["size"] > $maxFileSize || !in_array($imageFileType, $allowedFormats)) {
-        echo "Sorry, the file exceeds the size limit or has an unsupported format.";
-        exit(); // Add proper error handling or redirect here
+        echo "file mu terlalu besar.";
+        exit(); 
     }
 
-    // Rename the file if it already exists
+    // rename file juga sudah ada
     if (file_exists($target_file)) {
         $filename = generateUniqueFileName($target_dir, $filename, $imageFileType);
         $target_file = $target_dir . $filename;
     }
 
-    // Attempt to upload the file
+    // ulangi insert data
     if (!move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        echo "Sorry, there was an error uploading your file.";
-        exit(); // Add proper error handling or redirect here
+        echo "maaf terjadi kesalahan .";
+        exit(); 
     }
 }
 
-// Update the database
+// update
 $sql = "UPDATE products SET p_name=?, p_desc=?, p_value=?, p_image=? WHERE id=?";
 $stmt = mysqli_prepare($con, $sql);
 if ($stmt) {
     mysqli_stmt_bind_param($stmt, "ssisi", $PNAME, $PDESC, $PVALUE, $target_file, $id);
     if (mysqli_stmt_execute($stmt)) {
-        echo "<script>alert('Product $PNAME has been updated')</script>";
+        echo "<script>alert('Product $PNAME berhasil di update')</script>";
         header('location: admin_home.php');
         exit();
     } else {
-        echo "<script>alert('Product $PNAME has not been updated')</script>";
-        exit(); // Add proper error handling or redirect here
+        echo "<script>alert('Product $PNAME gagal di update')</script>";
+        exit(); 
     }
 } else {
     echo "Database error.";
-    exit(); // Add proper error handling or redirect here
+    exit();
 }
 ?>

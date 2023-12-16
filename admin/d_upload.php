@@ -5,13 +5,13 @@ include 'admin_db.php';
 if(isset($_POST['submit3'])){
     $id = $_POST['id'];
     
-    // Fetch the image file associated with the product ID
+    // fetch image file
     $sql = "SELECT p_image FROM products WHERE id = $id";
     $result = mysqli_query($con, $sql);
     $row = mysqli_fetch_assoc($result);
     $imageToDelete = $row['p_image'];
 
-    // Delete the product
+    // Delete dari db
     $deleteQuery = "DELETE FROM products WHERE id = $id";
     if(mysqli_query($con, $deleteQuery)){
         // Delete the image file only if it's not being used by other products
@@ -20,15 +20,15 @@ if(isset($_POST['submit3'])){
         $row = mysqli_fetch_assoc($checkResult);
         $totalCount = $row['total'];
         
-        // If the image is not used by any other product, delete it from the server
+        // jika img tidak di gunakan di produk lain hapus
         if($totalCount == 0){
             unlink($imageToDelete);
         }
-        echo "<script>alert('Product deleted successfully')</script>";
+        echo "<script>alert('Product berhasil di delete')</script>";
         header('location: admin_home.php');
         exit();
     } else {
-        echo "<script>alert('Failed to delete product')</script>";
+        echo "<script>alert('Gagal menghapus product')</script>";
     }
 }
 ?>

@@ -11,7 +11,7 @@ $PNAME = $_POST['pname'];
 $PDESC = $_POST['pdesc'];
 $PVALUE = $_POST['pvalue'];
 
-// Check if image file is an actual image or fake image
+// cek file 
 if (isset($_POST["submit1"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if ($check === false) {
@@ -20,13 +20,13 @@ if (isset($_POST["submit1"])) {
     }
 }
 
-// Check file size
+// Check buffer file size
 if ($_FILES["fileToUpload"]["size"] > 50000000) {
-    echo "Sorry, your file is too large.";
+    echo "File terlalu besar harap.";
     $uploadOk = 0;
 }
 
-// Allow certain file formats
+// format apa yang dipakai
 $allowedFormats = ["jpg", "png", "jpeg", "gif"];
 if (!in_array($imageFileType, $allowedFormats)) {
     echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
@@ -34,25 +34,25 @@ if (!in_array($imageFileType, $allowedFormats)) {
 }
 
 if ($uploadOk == 0) {
-    echo "Sorry, your file was not uploaded.";
+    echo "maaf, file anda tidak bisa di upload.";
 } else {
-    // Try to upload file
+    // insert ke db
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         // File upload succeeded, proceed with database insertion
         $sql = "INSERT INTO products (p_name, p_desc, p_value, p_image) VALUES ('$PNAME','$PDESC','$PVALUE', '$target_file')";
 
         if (mysqli_query($con, $sql)) {
-            echo "<script>alert('Product has been created')</script>";
+            echo "<script>alert('Produk sudah pernah di upload')</script>";
             header('location: admin_home.php');
             exit();
         } else {
-            // Remove uploaded file if database insertion fails
+            // hapus file jika insertion gagal
             unlink($target_file);
             echo "Error: " . $sql . "<br>" . mysqli_error($con);
-            echo "<script>alert('Product cannot be created')</script>";
+            echo "<script>alert('Product tidak bisa dibuat')</script>";
         }
     } else {
-        echo "Sorry, there was an error uploading your file.";
+        echo "Maaf ada kendala saat mengupload file kamu";
     }
 }
 ?>

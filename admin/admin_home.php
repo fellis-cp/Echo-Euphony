@@ -31,7 +31,7 @@ mysqli_close($con);
 
     <div class="button-container">
         <div class="btn-group" role="group" aria-label="Admin Actions">
-            <a href="./create_p.php" class="btn btn-primary"><i class="fas fa-plus-circle"></i>Add Product</a>
+            <a href="./create_p.php" class="btn btn-primary"><i class="fas fa-plus-circle"></i>Tambahkan Product</a>
             <a href="./update_p.php" class="btn btn-success"><i class="fas fa-pencil-alt"></i>Update Product</a>
             <a href="./delete_p.php" class="btn btn-danger"><i class="fas fa-trash-alt"></i>Delete Product</a>
             <a href="./admin_logout.php" class="btn btn-secondary"><i class="fas fa-sign-out-alt"></i>Logout</a>
@@ -57,7 +57,7 @@ mysqli_close($con);
           <div class="media-body">
             <h5 class="mt-0"><?php echo $rows['p_name']; ?></h5>
             <pre><?php echo $rows['p_desc']; ?></pre>
-            <p>Price: Rp. <?php echo $rows['p_value']; ?></p>
+            <p>Harga: Rp. <?php echo $rows['p_value']; ?></p>
           </div>
         </td>
       </tr>
