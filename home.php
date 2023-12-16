@@ -16,7 +16,7 @@
       </div>
       <ul>
         <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="https://github.com/fellis-cp/Echo-Euphony">Github</a></li>
       </ul>
     </div>
   </nav>

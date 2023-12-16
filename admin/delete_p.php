@@ -34,7 +34,7 @@ session_start()
 
 
         <div class="item">
- <center> <p>Choose Product</p>
+ <p>Choose Product</p>
     <select name='id'>
         <?php
             while($row = mysqli_fetch_assoc($rs)){

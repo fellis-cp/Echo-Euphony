@@ -1,19 +1,45 @@
+/* styles.css */
 
-
-.header{
-    font-size:large;
-}
-
-.h3{
-    margin : 10%;
-    text-align:center ;
+form {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 6px;
+    background: url(../img_logos/home-bg.jpg);
+    background-size: cover;
+    
+    border: 2px solid gray;
+    box-shadow: 0 0 15px 0 rgb(0, 0, 0);
+  }
+  
+  body {
+    font-family: comic;
+    margin: 0;
+  }
+  
+    .header {
+    border-radius: 6px;
+    box-shadow: 0 0 15px 0 rgb(0, 0, 0);
+    font-family: comic;
+    text-align: center;
+    color: gray;
+    font-size: 30px;
+   
+    
+  }
+  
+  .header {
+    font-size: large;
+  }
+  
+  .h3 {
+    margin: 10%;
+    text-align: center;
     color: white;
-}
-
-.h3 { 
-    animation: fadeInAnimation ease 7s; 
-    animation-iteration-count: on-slide; 
-    animation-fill-mode: forwards; 
-} 
-
-
+  }
+  
+  .h3 {
+    animation: fadeInAnimation ease 7s;
+    animation-iteration-count: on-slide;
+    animation-fill-mode: forwards;
+  }

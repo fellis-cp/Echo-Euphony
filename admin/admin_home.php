@@ -5,6 +5,12 @@ header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
 header("Pragma: no-cache"); // HTTP 1.0.
 header("Expires: 0"); // Proxies.
 session_start() ; 
+$con=mysqli_connect('localhost','root','');
+mysqli_select_db($con, 'website1');
+$querry = "select * from products order by id desc";
+$result = mysqli_query($con,$querry);
+$row= mysqli_num_rows($result);
+mysqli_close($con);
 ?>
 
 <!DOCTYPE html>
@@ -37,5 +43,26 @@ session_start() ;
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+
+
+<form class="form-inline">
+  <table class="table" style='margin-top:0px;'>
+    <?php
+    global $result;
+    while ($rows = mysqli_fetch_assoc($result)) :
+    ?>
+      <tr>
+        <td><img style='width:300px; height:250px' src="../admin/<?php echo $rows['p_image']; ?>" alt="Product Image"></td>
+        <td>
+          <div class="media-body">
+            <h5 class="mt-0"><?php echo $rows['p_name']; ?></h5>
+            <pre><?php echo $rows['p_desc']; ?></pre>
+            <p>Price: Rp. <?php echo $rows['p_value']; ?></p>
+          </div>
+        </td>
+      </tr>
+    <?php endwhile; ?>
+  </table>
+</form>
 </body>
 </html>

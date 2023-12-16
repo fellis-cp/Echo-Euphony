@@ -1,34 +1,34 @@
 <?php
 session_start();
 include 'admin_db.php';
-$target_dir = "store/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-//include 'd_upload.php';
 
-$id = $_POST['id'];
-
-
-if (!isset($_GET['id'])) {
-    echo $id;
+if(isset($_POST['submit3'])){
+    $id = $_POST['id'];
     
-    $sqlforunlink = "SELECT p_image from products where id=$id";
-    $res = mysqli_query($con,$sqlforunlink);
-    $rows= mysqli_fetch_assoc($res);
-    //die;
-    
-    $sql = "DELETE FROM products WHERE id=$id";
-    unlink($rows['p_image']);
+    // Fetch the image file associated with the product ID
+    $sql = "SELECT p_image FROM products WHERE id = $id";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    $imageToDelete = $row['p_image'];
 
-    echo $sql;
-    if(mysqli_query($con,$sql)){
-        echo "<script>alert('Product has been Deleted')</script>";
-    }else{
-        echo "<script>alert('Product is not Deleted')</script>";    
+    // Delete the product
+    $deleteQuery = "DELETE FROM products WHERE id = $id";
+    if(mysqli_query($con, $deleteQuery)){
+        // Delete the image file only if it's not being used by other products
+        $checkImageQuery = "SELECT COUNT(*) AS total FROM products WHERE p_image = '$imageToDelete'";
+        $checkResult = mysqli_query($con, $checkImageQuery);
+        $row = mysqli_fetch_assoc($checkResult);
+        $totalCount = $row['total'];
+        
+        // If the image is not used by any other product, delete it from the server
+        if($totalCount == 0){
+            unlink($imageToDelete);
+        }
+        echo "<script>alert('Product deleted successfully')</script>";
+        header('location: admin_home.php');
+        exit();
+    } else {
+        echo "<script>alert('Failed to delete product')</script>";
     }
-
-    
-    header('location: admin_home.php');
-}else{
-    echo 'nope';
 }
 ?>

@@ -26,16 +26,7 @@ if (!isset($_SESSION['u_fname'])) {
   <p>Untuk melihat produk kami silahkan menuju ke bagian Products</p>
 </div>
 
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="../img_logos/mobile2.jpg" alt="First slide">
-    </div>
-  </div>
-</div>
-
-
-
+  
 </form>
 
 
@@ -43,33 +34,3 @@ if (!isset($_SESSION['u_fname'])) {
 </body>
 </html>
 
-<style>
-form {
-  width: 100%;
-  padding: 20px;
-  border-radius: 6px;
-  background: #fff;
-  box-shadow: 0 0 15px 0 rgb(0,0,0); 
-  }
-
-  body {
-  font-family: comic;
-  margin: 0;
-}
-
-/* Header/Logo Title */
-.header {
-  border-radius: 6px;
-  box-shadow: 0 0 15px 0 rgb(0,0,0); 
-  font-family: comic;
-
-  padding: 60px;
-  text-align: center;
-  background: #1abc9c;
-  color: white;
-  font-size: 30px;
-}
-
-/* Page Content */
-.content {padding:20px;}
-</style>

@@ -21,18 +21,29 @@ mysqli_close($con);
     <?php
     include 'u_header.php';
     ?>
-    <table class="table" style='margin-top:0px;'>
-        <?php
-        while ($rows = mysqli_fetch_assoc($result)) :
-        ?>
-            <tr>
-                <td><img style='width:700px; height:400px' src="../admin/<?php echo $rows['p_image']; ?>" alt="Generic placeholder image"></td>
-                <td>
-                    <h5 class="mt-0"><?php echo $rows['p_name'] . '<br>' . $rows['p_desc'] . '<br>' . 'Rs. ' . $rows['p_value'] . '<br>'; ?></h5>
-                </td>
-            </tr>
-        <?php endwhile; ?>
-    </table>
+
+<form class="form-inline">
+  <table class="table" style='margin-top: 0px;'>
+    <?php
+    global $result;
+    while ($rows = mysqli_fetch_assoc($result)) :
+    ?>
+      <tr>
+        <td style="width: 200px;">
+          <img style='width: 400px; height: 350px;' src="../admin/<?php echo $rows['p_image']; ?>" alt="Product Image">
+        </td>
+        <td style="vertical-align: top;">
+          <div class="media-body" style="text-align: left;">
+            <h5 class="mt-0"><?php echo $rows['p_name']; ?></h5>
+            <pre><?php echo $rows['p_desc']; ?></pre>
+            <p>Price: Rp. <?php echo $rows['p_value']; ?></p>
+          </div>
+        </td>
+      </tr>
+    <?php endwhile; ?>
+  </table>
+</form>
+
 </body>
 
 </html>

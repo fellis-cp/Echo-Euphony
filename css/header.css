@@ -69,3 +69,14 @@ body {
     background: linear-gradient(to top, #000000 100%, #ffffff 100%);
     height: 100vh
 }
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  resize: vertical; /* Allow vertical resizing */
+}
+
+.item {
+  position: relative;
+  margin: 20px 0; /* Increase the margin for better spacing */
+}
