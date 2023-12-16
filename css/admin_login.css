@@ -1,11 +1,10 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* header*/
+
 .header {
     border-radius: 6px;
     overflow: hidden;
@@ -62,7 +61,7 @@
 
 
 body {
-  background: url(admin.jpg), no-repeat;
+  background: url(../asset/admin-baner.jpg), no-repeat;
   font-family: $font-family;
   font-size: 10px;
   background-size: 100% !important;
@@ -157,13 +156,6 @@ float:left;
 }
 
 
-/*.btn_group button{
-    display:inline-block;
-    width: 50%;
-    cursor: pointer;
-    float: left;
-}
-*/
 
 button:hover{
     color: whitesmoke;

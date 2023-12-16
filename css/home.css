@@ -54,7 +54,7 @@ nav .menu{
   color: black;
 }
 .img{
-  background: url(iem.jpg)no-repeat;
+  background: url(../asset/home-baner.jpg)no-repeat;
   width: 100%;
   height: 100vh;
   background-size: cover;

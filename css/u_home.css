@@ -5,7 +5,7 @@ form {
     height: 100%;
     padding: 20px;
     border-radius: 6px;
-    background: url(../img_logos/home-bg.jpg);
+    background: url(../asset/user-home.jpg);
     background-size: cover;
     
     border: 2px solid gray;

@@ -62,7 +62,7 @@
 
 body {
 
-    background: url(foto.jpg), no-repeat;
+    background: url(../asset/login-baner.jpg), no-repeat;
     font-family: $font-family;
     font-size: 10px;
     background-size: 100% !important;
