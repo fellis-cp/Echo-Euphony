@@ -52,12 +52,12 @@ mysqli_close($con);
     while ($rows = mysqli_fetch_assoc($result)) :
     ?>
       <tr>
-        <td><img style='width:300px; height:250px' src="../admin/<?php echo $rows['p_image']; ?>" alt="Product Image"></td>
+        <td><img style='width:600px; height:300px' src="../admin/<?php echo $rows['gambar_produk']; ?>" alt="Product Image"></td>
         <td>
           <div class="media-body">
-            <h5 class="mt-0"><?php echo $rows['p_name']; ?></h5>
-            <pre><?php echo $rows['p_desc']; ?></pre>
-            <p>Harga: Rp. <?php echo $rows['p_value']; ?></p>
+            <h5 class="mt-0"><?php echo $rows['nama_produk']; ?></h5>
+            <pre><?php echo $rows['deskripsi_produk']; ?></pre>
+            <p>Harga: Rp. <?php echo $rows['harga_produk']; ?></p>
           </div>
         </td>
       </tr>

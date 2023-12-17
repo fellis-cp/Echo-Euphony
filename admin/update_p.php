@@ -25,7 +25,7 @@ session_start();
                 <p>Pilih product yang akan di update</p>
                 <select name='id' class="form-control form-control-lg">
                     <?php while ($row = mysqli_fetch_assoc($rs)): ?>
-                        <option value="<?= $row['id'] ?>"><?= $row["p_name"] ?></option>
+                        <option value="<?= $row['id'] ?>"><?= $row["nama_produk"] ?></option>
                     <?php endwhile; ?>
                 </select>
             </div>
@@ -33,18 +33,18 @@ session_start();
             <div class="item">
                 <p>Update nama product</p>
                 <div class="name-item">
-                    <input type="text" name="pname" placeholder="Nama baru" required />
+                    <input type="text" name="nama_produk" placeholder="Nama baru" required />
                 </div>
             </div>
             
             <div class="item">
                 <p>Update harga product</p>
-                <input type="text" name="pvalue" placeholder="Harga product baru" required />
+                <input type="text" name="harga_produk" placeholder="Harga product baru" required />
             </div>
       
             <div class="item">
                 <p>Update deskripsi product</p>
-                <textarea  name='pdesc' placeholder="Deskripsi baru"  rows="3"   required></textarea>
+                <textarea name='deskripsi_produk' placeholder="Deskripsi baru" rows="3" required></textarea>
             </div>
 
             <div>

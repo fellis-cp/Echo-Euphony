@@ -8,9 +8,9 @@ $target_file = $target_dir . $filename;
 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
 $id = $_POST['id'];
-$PNAME = $_POST['pname'];
-$PDESC = $_POST['pdesc'];
-$PVALUE = $_POST['pvalue'];
+$PNAME = $_POST['nama_produk'];
+$PDESC = $_POST['deskripsi_produk'];
+$PVALUE = $_POST['harga_produk'];
 
 function generateUniqueFileName($dir, $name, $ext) {
     $counter = 1;
@@ -52,7 +52,7 @@ if ($_FILES["fileToUpload"]["size"] > 0) {
 }
 
 // update
-$sql = "UPDATE products SET p_name=?, p_desc=?, p_value=?, p_image=? WHERE id=?";
+$sql = "UPDATE products SET nama_produk=?, deskripsi_produk=?, harga_produk=?, gambar_produk=? WHERE id=?";
 $stmt = mysqli_prepare($con, $sql);
 if ($stmt) {
     mysqli_stmt_bind_param($stmt, "ssisi", $PNAME, $PDESC, $PVALUE, $target_file, $id);

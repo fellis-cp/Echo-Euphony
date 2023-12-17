@@ -39,7 +39,7 @@ if ($uploadOk == 0) {
     // insert ke db
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         // File upload succeeded, proceed with database insertion
-        $sql = "INSERT INTO products (p_name, p_desc, p_value, p_image) VALUES ('$PNAME','$PDESC','$PVALUE', '$target_file')";
+        $sql = "INSERT INTO products (nama_produk, deskripsi_produk, harga_produk, gambar_produk) VALUES ('$PNAME','$PDESC','$PVALUE', '$target_file')";
 
         if (mysqli_query($con, $sql)) {
             echo "<script>alert('Produk sudah pernah di upload')</script>";

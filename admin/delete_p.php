@@ -27,7 +27,7 @@ session_start();
                 <p>Pilih product yang akan dihapus</p>
                 <select name='id'>
                     <?php while ($row = mysqli_fetch_assoc($rs)): ?>
-                        <option value="<?= $row['id'] ?>"><?= $row["p_name"] ?></option>
+                        <option value="<?= $row['id'] ?>"><?= $row["nama_produk"] ?></option>
                     <?php endwhile; ?>
                 </select>
             </div>
