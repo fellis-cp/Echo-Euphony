@@ -32,7 +32,7 @@ Clone repository
 Import file database dari folder Sqlfile kedalam Mysql
 
 ```bash
-Echo-Euphony/Sqlfile/<db>.sql
+<dir>Echo-Euphony/sqlfile/website1.sql
 ```
 
 Jalankan di localhost
@@ -40,6 +40,14 @@ Jalankan di localhost
 ```bash
 localhost/Euphony-Euphony
 ```
+
+User login 
+email = user@gmail.com ,
+pass  = user
+
+Admin Login 
+email = admin@gmail.com ,
+pass  = admin
 
 
 
