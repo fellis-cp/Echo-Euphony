@@ -42,11 +42,11 @@ localhost/Euphony-Euphony
 ```
 
 User login 
-email = user@gmail.com 
+email = user@gmail.com ,
 pass  = user
 
 Admin Login 
-email = admin@gmail.com
+email = admin@gmail.com ,
 pass  = admin
 
 
