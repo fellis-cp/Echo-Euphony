@@ -31,7 +31,7 @@ mysqli_close($con);
                         <div class="media-body" style="text-align: left;">
                             <h5><?php echo $rows['p_name']; ?></h5>
                             <pre><?php echo $rows['p_desc']; ?></pre>
-                            <p>Price: Rp. <?php echo $rows['p_value']; ?></p>
+                            <p>Harga: Rp. <?php echo $rows['p_value']; ?></p>
                         </div>
                     </td>
                 </tr>
