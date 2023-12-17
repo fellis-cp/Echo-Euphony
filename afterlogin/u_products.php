@@ -2,9 +2,8 @@
 $con = mysqli_connect('localhost', 'root', '');
 mysqli_select_db($con, 'website1');
 
-$query = "SELECT * FROM u_products ORDER BY id DESC";
+$query = "SELECT * FROM products ORDER BY id DESC";
 $result = mysqli_query($con, $query);
-
 mysqli_close($con);
 ?>
 
@@ -24,14 +23,14 @@ mysqli_close($con);
             <?php while ($rows = mysqli_fetch_assoc($result)) : ?>
                 <tr>
                     <td style="width: 200px;">
-                        <img style='width: 400px; height: 350px;' src="../admin/<?php echo $rows['p_image']; ?>" alt="Product Image">
+                        <img style='width: 600px; height: 300px;' src="../admin/<?php echo $rows['gambar_produk']; ?>" alt="Product Image">
                     </td>
                     <td style="vertical-align: top;">
                         <div class="media-body">
                         <div class="media-body" style="text-align: left;">
-                            <h5><?php echo $rows['p_name']; ?></h5>
-                            <pre><?php echo $rows['p_desc']; ?></pre>
-                            <p>Harga: Rp. <?php echo $rows['p_value']; ?></p>
+                            <h5><?php echo $rows['nama_produk']; ?></h5>
+                            <pre><?php echo $rows['deskripsi_produk']; ?></pre>
+                            <p>Harga: Rp. <?php echo $rows['harga_produk']; ?></p>
                         </div>
                     </td>
                 </tr>
