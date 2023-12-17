@@ -60,7 +60,7 @@ $color-primary: #ABA194;
   }
 
 body {
-  background: url(register.jpg), no-repeat;
+  background: url(../asset/regis-baner.jpg), no-repeat;
   font-family: $font-family;
   font-size: 10px;
   background-size: 100% !important;

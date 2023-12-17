@@ -1,10 +1,9 @@
 body {
     padding-top: 50px;
-    background: url(admin.jpg), no-repeat;
+    background: #c4d7e5 ; 
     font-family: $font-family;
     font-size: 16px;
     background-size: 100% !important;
-    animation: move 10s ease infinite;
     transform: translate3d(0, 0, 0);
     height: 100vh;
 }
@@ -15,8 +14,8 @@ h5 {
 
 .button-container {
 
-    padding: 20px; /* Adjust the padding as needed */
-    border-radius: 10px; /* Optional: add border radius for a rounded container */
+    padding: 20px; 
+    border-radius: 10px; 
     opacity: 0.85;
 }
 .btn-group {
@@ -26,17 +25,30 @@ h5 {
 }
 
 .btn-group .btn {
-    margin-bottom: 65px; /* Adjust the spacing between buttons */
+    margin-bottom: 65px; 
     padding: 15px 25px;
     font-size: 16px;
     border-radius: 60px;
     transition: all 0.3s ease;
-    width: 700px; /* Optional: set the width of buttons */
-    text-align: center; /* Optional: center button text */
+    width: 700px; 
+    text-align: center; 
 }
 .btn-group .btn:hover {
     transform: scale(1.05);
 }
 .btn-group .btn i {
     margin-right: 5px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
 }
