@@ -12,7 +12,7 @@ session_start();
 </head>
 <body>
     <div class="testbox">
-        <form action="u_upload.php" method='post' enctype="multipart/form-data">
+        <form action="fun_update_product.php" method='post' enctype="multipart/form-data">
             <div class="banner">
                 <h1>Update Product</h1>
             </div>

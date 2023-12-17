@@ -13,7 +13,7 @@ session_start();
 
 <body>
     <div class="testbox">
-        <form action="c_upload.php" method='post' enctype="multipart/form-data">
+        <form action="fun_create_product.php" method='post' enctype="multipart/form-data">
             <div class="banner">
                 <h1>Tambahkan Product</h1>
             </div>
