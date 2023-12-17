@@ -4,17 +4,17 @@ date_default_timezone_set('Asia/Kolkata');
 require('db.php');
 
 if (isset($_REQUEST['email'])) {
-    $u_fname = mysqli_real_escape_string($con, stripslashes($_REQUEST['fname']));
-    $u_lname = mysqli_real_escape_string($con, stripslashes($_REQUEST['lname']));
-    $u_email = mysqli_real_escape_string($con, stripslashes($_REQUEST['email']));
-    $u_password = mysqli_real_escape_string($con, stripslashes($_REQUEST['password']));
+    $u_fname = mysqli_real_escape_string($con, $_REQUEST['fname']);
+    $u_lname = mysqli_real_escape_string($con, $_REQUEST['lname']);
+    $u_email = mysqli_real_escape_string($con, $_REQUEST['email']);
+    $u_password = mysqli_real_escape_string($con, $_REQUEST['password']);
 
     $trn_date = date("Y-m-d H:i:s");
     $query = "INSERT INTO `users` (f_name, l_name, email, password) VALUES ('$u_fname', '$u_lname', '$u_email', '$u_password')";
     $result = mysqli_query($con, $query);
 
     if ($result) {
-        echo "<script>alert('selamat $u_fname akun mu telah dibuat')</script>";
+        echo "<script>alert('Selamat $u_fname, akunmu telah dibuat')</script>";
         include 'home.php';
         exit(); 
     }
@@ -47,13 +47,13 @@ if (isset($_REQUEST['email'])) {
 
     <form class='form1' action='' method='post'>
         <div class='form1_group'>
-            <input type="text" name='fname' placeholder="Masukan Nama Awal" class='f_input' required>
+            <input type="text" name='fname' placeholder="Masukkan Nama Awal" class='f_input' required>
         </div>
         <div class='form1_group'> 
-            <input type="text" name='lname' placeholder="Masukan Nama Akhir" class='f_input' required>
+            <input type="text" name='lname' placeholder="Masukkan Nama Akhir" class='f_input' required>
         </div>
         <div class='form1_group'> 
-            <input type="email" name='email' placeholder="Masukan Email" class='f_input' required>
+            <input type="email" name='email' placeholder="Masukkan Email" class='f_input' required>
         </div>
         <div class='form1_group'>
             <input type="password" name='password' placeholder="Password" class='f_input' required>
