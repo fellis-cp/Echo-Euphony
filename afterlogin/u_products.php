@@ -29,7 +29,7 @@ mysqli_close($con);
                         <div class="media-body">
                         <div class="media-body" style="text-align: left;">
                             <h5><?php echo $rows['nama_produk']; ?></h5>
-                            <pre><?php echo $rows['deskripsi_produk']; ?></pre>
+                            <pre style="white-space: pre-wrap;"><?php echo $rows['deskripsi_produk']; ?></pre>
                             <p>Harga: Rp. <?php echo $rows['harga_produk']; ?></p>
                         </div>
                     </td>
