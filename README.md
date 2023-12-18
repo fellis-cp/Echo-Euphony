@@ -38,7 +38,7 @@ Import file database dari folder Sqlfile kedalam Mysql
 Jalankan di localhost
 
 ```bash
-localhost/Euphony-Euphony
+localhost/Echo-Euphony
 ```
 
 User login 
