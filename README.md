@@ -3,7 +3,7 @@
 
 Simple Crud Katalog Toko Online Iem & Headphone Serta Perlengkapan Audio Lainya. 
 
-Webisite ini dibuat untuk memenuhi tugas akhir Pemrograman Web.
+Website ini dibuat untuk memenuhi tugas akhir Pemrograman Web.
 
 
 ## Tech Stack
